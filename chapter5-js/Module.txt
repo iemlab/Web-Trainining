@@ -1,0 +1,552 @@
+Introduction
+hello World
+Variable
+console log
+get element by id
+Rules and syntax:
+	Where to place js
+	Dom manupulation
+	
+
+
+BMI calculator
+	if else
+	function
+	Boolean rule
+	simple mathematical operation
+	alert
+
+More to go.........
+
+Whats next
+
+js:-->
+
+js HTML methods:
+1.getElementById
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+</body>
+##########################
+2.JavaScript Display Possibilities
+JavaScript can "display" data in different ways:
+
+Writing into an HTML element, using innerHTML.
+Writing into the HTML output using document.write().
+Writing into an alert box, using window.alert().
+Writing into the browser console, using console.log().
+
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+</script>
+
+<button onclick="window.print()">Print this page</button>
+###################
+3.JavaScript Keywords
+JavaScript statements often start with a keyword to identify the JavaScript action to be performed.
+
+Our Reserved Words Reference lists all JavaScript keywords.
+
+Here is a list of some of the keywords you will learn about in this tutorial:
+
+Keyword	Description: 
+		var	Declares a variable
+		let	Declares a block variable
+		const	Declares a block constant
+		if	Marks a block of statements to be executed on a condition
+		switch	Marks a block of statements to be executed in different cases
+		for	Marks a block of statements to be executed in a loop
+		function	Declares a function
+		return	Exits a function
+		try	Implements error handling to a block of statements
+		When to Use JavaScript const?
+If you want a general rule: always declare variables with const.
+
+If you think the value of the variable can change, use let.
+
+<script>
+// Create an Array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Change an element:
+cars[0] = "Toyota";
+
+// Add an element:
+cars.push("Audi");
+
+// Display the Array:
+document.getElementById("demo").innerHTML = cars; 
+</script>
+
+
+4.
+Object Definition
+You define (and create) a JavaScript object with an object literal:
+
+Objects can also have methods.
+
+Methods are actions that can be performed on objects.
+
+Methods are stored in properties as function definitions.
+
+
+
+<script>
+// Create an object:
+const person = {
+  firstName: "SHUBH",
+  lastName : "HALDER",
+  id     :  5566
+};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML =
+person.firstName + " " + person.lastName;
+</script>
+
+In JavaScript, the this keyword refers to an object.
+
+Which object depends on how this is being invoked (used or called).
+
+The this keyword refers to different objects depending on how it is used:
+
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+<p>An object method is a function definition, stored as a property value.</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+</body>
+</html>
+
+5.JS eVENTS:
+TML events are "things" that happen to HTML elements.
+
+When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+
+
+
+<button onclick="this.innerHTML=Date()">The time is?</button>
+
+
+6.js MATH:
+he Math Object
+Unlike other objects, the Math object has no constructor.
+
+The Math object is static.
+
+All methods and properties can be used without creating a Math object first.
+
+Math Properties (Constants)
+The syntax for any Math property is : Math.property.
+
+JavaScript provides 8 mathematical constants that can be accessed as Math properties:
+
+
+Math.random()
+Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive):
+
+7. JS COMPARISINS
+
+==	equal to	x == 8	false	
+x == 5	true	
+x == "5"	true	
+===	equal value and equal type	x === 5	true	
+x === "5"	false
+
+#######################################
+8. JS iterable:
+Iterating Over a Set
+You can use a for..of loop to iterate over the elements of a Set:
+
+<script>
+// Create a Set
+const letters = new Set(["a","b","c"]);
+
+// List all Elements
+let text = "";
+for (const x of letters) {
+  text += x + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+Iterating Over a Map
+You can use a for..of loop to iterate over the elements of a Map:
+
+<script>
+// Create a Map
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+// List all entries
+let text = "";
+for (const x of fruits) {
+  text += x + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+Iterating Over a String
+You can use a for..of loop to iterate over the elements of a string:
+
+<script>
+// Create a String
+const name = "W3Schools";
+
+// List all Elements
+let text = ""
+for (const x of name) {
+  text += x + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+Iterating Over an Array
+You can use a for..of loop to iterate over the elements of an Array:
+<script>
+// Create aa Array
+const letters = ["a","b","c"];
+
+// List all Elements
+let text = "";
+for (const x of letters) {
+  text += x + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+9. js Scope : 
+ES6 introduced two important new JavaScript keywords: let and const.
+
+These two keywords provide Block Scope in JavaScript.
+
+Variables declared inside a { } block cannot be accessed from outside the block:
+
+
+Local Scope:
+Variables declared within a JavaScript function, become LOCAL to the function.
+
+Example
+// code here can NOT use carName
+
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
+
+Function Scope:
+JavaScript has function scope: Each function creates a new scope.
+
+Variables defined inside a function are not accessible (visible) from outside the function.
+
+Variables declared with var, let and const are quite similar when declared inside a function.
+
+They all have Function Scope:
+
+function myFunction() {
+  var carName = "Volvo";   // Function Scope
+}
+
+
+Global Scope
+Variables declared Globally (outside any function) have Global Scope.
+
+Global variables can be accessed from anywhere in a JavaScript program.
+
+Variables declared with var, let and const are quite similar when declared outside a block.
+
+They all have Global Scope:
+
+var x = 2;       // Global scope
+let x = 2;       // Global scope
+10.JavaScript Declarations are Hoisted
+
+
+In JavaScript, a variable can be declared after it has been used.
+
+In other words; a variable can be used before it has been declared.
+
+
+
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+
+With strict mode, you can not, for example, use undeclared variables.
+
+11. js Functions:
+Function Declarations
+Earlier in this tutorial, you learned that functions are declared with the following syntax:
+
+function functionName(parameters) {
+  // code to be executed
+}
+Declared functions are not executed immediately. They are "saved for later use", and will be executed later, when they are invoked (called upon).
+Self-Invoking Functions:
+Function expressions can be made "self-invoking".
+
+A self-invoking expression is invoked (started) automatically, without being called.
+
+Function expressions will execute automatically if the expression is followed by ().
+
+You cannot self-invoke a function declaration.
+
+You have to add parentheses around the function to indicate that it is a function expression:
+
+Example
+(function () {
+  let x = "Hello!!";  // I will invoke myself
+})();
+
+
+Function Hoisting:
+
+Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.
+
+Hoisting applies to variable declarations and to function declarations.
+
+Because of this, JavaScript functions can be called before they are declared:
+
+myFunction(5);
+
+function myFunction(y) {
+  return y * y;
+}
+Functions defined using an expression are not hoisted.
+
+
+Arrow function:
+<script>
+const x = (x, y) => x * y;
+document.getElementById("demo").innerHTML = x(5, 5);
+</script>
+
+ith the call() method, you can write a method that can be used on different objects.
+
+All Functions are Methods
+In JavaScript all functions are object methods.
+
+If a function is not a method of a JavaScript object, it is a function of the global object (see previous chapter).
+
+The example below creates an object with 3 properties, firstName, lastName, fullName.
+
+<script>
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+
+const person1 = {
+  firstName:"abc",
+  lastName: "xyz"
+}
+
+const person2 = {
+  firstName:"Mary",
+  lastName: "Doe"
+}
+
+document.getElementById("demo").innerHTML = person.fullName.call(person1, "Oslo", "Norway"); 
+</script>
+
+The apply() method takes arguments as an array.
+
+With the bind() method, an object can borrow a method from another object.
+
+The example below creates 2 objects (person and member).
+
+The member object borrows the fullname method from the person object:
+
+
+JavaScript Nested Functions
+All functions have access to the global scope.  
+
+In fact, in JavaScript, all functions have access to the scope "above" them.
+
+JavaScript supports nested functions. Nested functions have access to the scope "above" them.
+
+In this example, the inner function plus() has access to the counter variable in the parent function:
+
+<p id="demo">0</p>
+
+<script>
+document.getElementById("demo").innerHTML = add();
+function add() {
+  let counter = 0;
+  function plus() {counter += 1;}
+  plus();  
+  return counter; 
+}
+</script>
+
+
+JS CLOSURE:
+This is called a JavaScript closure. It makes it possible for a function to have "private" variables. 
+The counter is protected by the scope of the anonymous function, and can only be changed using the add function.
+ A closure is a function having access to the parent scope, even after the parent function has closed.
+
+<p>Counting with a local variable.</p>
+
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demo">0</p>
+
+<script>
+const add = (function () {
+  let counter = 0;
+  return function () {counter += 1; return counter;}
+})();
+
+function myFunction(){
+  document.getElementById("demo").innerHTML = add();
+}
+</script>
+
+
+js callbacks:
+<p id="demo"></p>
+
+<script>
+function myDisplayer(something) {
+  document.getElementById("demo").innerHTML = something;
+}
+
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+
+myCalculator(5, 5, myDisplayer);
+</script>
+
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+function getFile(myCallback) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "mycar.html");
+  req.onload = function() {
+    if (req.status == 200) {
+      myCallback(this.responseText);
+    } else {
+      myCallback("Error: " + req.status);
+    }
+  }
+  req.send();
+}
+
+getFile(myDisplayer); 
+</script>
+
+In the example above, myDisplayer is used as a callback.
+
+myDisplayer is passed to getFile() as an argument.
+
+Js promises:
+Promise Object Properties
+A JavaScript Promise object can be:
+
+Pending
+Fulfilled
+Rejected
+The Promise object supports two properties: state and result.
+
+While a Promise object is "pending" (working), the result is undefined.
+
+When a Promise object is "fulfilled", the result is a value.
+
+When a Promise object is "rejected", the result is an error object.
+
+
+<script>
+const myPromise = new Promise(function(myResolve, myReject) {
+  setTimeout(function(){ myResolve("Hello !!"); }, 3000);
+});
+
+myPromise.then(function(value) {
+  document.getElementById("demo").innerHTML = value;
+});
+</script>
+
+
+Call back: 
+<h1 id="demo"></h1>
+
+<script>
+setTimeout(function() { myFunction("It's You !!!"); }, 3000);
+
+function myFunction(value) {
+  document.getElementById("demo").innerHTML = value;
+}
+</script>
+
+JS async :
+
+The keyword async before a function makes the function return a promise:
+
+Example
+async function myFunction() {
+  return "Hello";
+}
+
+The keyword await before a function makes the function wait for a promise:
+
+let value = await promise;
+
+<script>
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve, reject) {
+    resolve("Hello!!");
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+</script>
+
+

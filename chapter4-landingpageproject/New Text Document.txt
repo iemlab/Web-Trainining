@@ -1,0 +1,99 @@
+Builders
+and tindog
+CSS (Cascading Style Sheets) is used to style and lay out web pages — for example, 
+to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features.
+ This module provides a gentle beginning to your path towards CSS mastery with the basics of how it works, what the syntax looks like, 
+ and how you can start using it to add styling to HTML.
+
+ ####################################
+font-family :specify the font of the text
+Serif fonts have a small stroke at the edges of each letter. They create a sense of formality and elegance.
+Sans-serif fonts have clean lines (no small strokes attached). They create a modern and minimalistic look.
+Monospace fonts - here all the letters have the same fixed width. They create a mechanical look. 
+Cursive fonts imitate human handwriting.
+Fantasy fonts are decorative/playful fonts.
+###############################################################################
+padding: 
+CSS has properties for specifying the padding for each side of an element:
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+All the padding properties can have the following values:
+
+length - specifies a padding in px, pt, cm, etc.
+% - specifies a padding in % of the width of the containing element
+inherit - specifies that the padding should be inherited from the parent element
+########################################################################################
+Margin: 
+The CSS margin properties are used to create space around elements, outside of any defined borders.
+
+With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left).
+
+###########################################################################
+Margin - Individual Sides
+CSS has properties for specifying the margin for each side of an element:
+
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+###############################################################################
+
+
+* -> The asterisk (*) is known as the CSS universal selectors. It can be used to select any and all types of elements in an HTML page. 
+The asterisk can also be followed by a selector while using to select a child object. 
+This selector is useful when we want to select all the
+
+#->
+Id selector(“#”): The id selector selects the id attribute of an HTML element to select a specific element. An id is always unique within the page so it is chosen to select a single, unique element. It is written with the hash character (#), followed by the id of the element. 
+
+Syntax: 
+#element_id_name{
+  // CSS properties
+}
+Example: In this code we will use only id selector to set style to the HTML elements. 
+
+. ->
+Class Selector(“.”): The class selector selects HTML elements with a specific class attribute. It is used with a period character “.” (full stop symbol) followed by the class name. 
+
+Syntax: 
+.element_class_name{
+  // CSS properties
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>CSS class Selector</title>
+	<style>
+		.container {
+			width: 400px;
+			height: 150px;
+			border: 2px solid black;
+			text-align: center;
+		}
+		
+		.cl {
+			color: green;
+		}
+		
+		.selector {
+			font-family: Courier New;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="cl">GeeksforGeeks</h1>
+		<h4 id="nu">A Computer Science portal for Geeks</h4>
+		<b class="selector">CSS Selector class(.)</b>
+	</div>
+</body>
+
+</html>
