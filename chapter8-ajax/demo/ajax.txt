@@ -1,0 +1,61 @@
+ajax
+
+what is it
+
+Why use ajax
+
+What is json
+XML
+
+When to use whom
+#####################################
+
+Ajax Get request:
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "demo_get.asp", true);
+  xhttp.send();
+}
+</script>
+
+post request:
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "demo_post.asp", true);
+  xhttp.send();
+}
+</script>
+
+
+Synchronous Request
+To execute a synchronous request, change the third parameter in the open() method to false:
+
+xhttp.open("GET", "ajax_info.txt", false);
+Sometimes async = false are used for quick testing. You will also find synchronous requests in older JavaScript code.
+
+Since the code will wait for server completion, there is no need for an onreadystatechange function:
+
+The getAllResponseHeaders() method returns all header information from the server response.
+
+
+
+AJAX XML Example
+The following example will demonstrate how a web page can fetch information from an XML file with AJAX:
+
